@@ -2,7 +2,7 @@
 
 
 ## Team: RANDOM NLP SQUADRON
-- Andraž Čeh ([@student8694](https://github.com/student8694)
+- Andraž Čeh ([@student8694](https://github.com/student8694))
 - Tilen Miklavič ([@tilenmiklavic](https://github.com/tilenmiklavic))
 - Tom Sojer ([@tomssojer](https://github.com/tomssojer))
 
