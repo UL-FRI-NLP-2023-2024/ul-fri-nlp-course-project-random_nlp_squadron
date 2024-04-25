@@ -7,8 +7,11 @@ class SpiderSpider(scrapy.Spider):
     start_urls = ['http://med.over.net/']
 
     def parse(self, response):
+        print(response.status)
+        print("Here")
         posts = response.css('.forum-post__content ::text').getall()
         print(len(posts))
+        print(self)
         
         # Processing extracted content
         for post in posts:
@@ -17,6 +20,13 @@ class SpiderSpider(scrapy.Spider):
             yield {
                 'content': post.strip()
             }
+
+        # Extracting links and yielding new requests
+        links = response.css('a::attr(href)').getall()  # This assumes all links are contained in 'a' tags and are of interest
+        for link in links:
+            full_url = response.urljoin(link)  # Ensures the link is a complete URL
+            if "med.over.net" in full_url:  # Optional: additional check to stay within the domain
+                yield scrapy.Request(full_url, callback=self.parse)
 
 
     # class selector med.over.net: forum-post__content
