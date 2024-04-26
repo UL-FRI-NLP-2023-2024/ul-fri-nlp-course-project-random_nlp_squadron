@@ -3,18 +3,19 @@ from datetime import datetime
 from urllib.parse import urlparse
 
 
-class SpiderSpider(scrapy.Spider):
-    name = 'spider'
-    allowed_domains = ['med.over.net', 'slo-tech.com']
-    start_urls = ['https://med.over.net/', 'https://slo-tech.com/forum']
+class SlotechSpider(scrapy.Spider):
+    name = 'slotech'
+    allowed_domains = ['slo-tech.com']
+    start_urls = ['http://slo-tech.com/']
     minimal_chars_allowed = 10
+    
+    custom_settings = {
+        'FEED_URI': '../../../data/output_slotech.xml'
+    }
 
     def parse(self, response):
 
-        # Slo tech 
         posts = response.css('.post .content ::text').getall()
-        # Med over net
-        posts += response.css('.forum-post__content ::text').getall()
 
         # Extracting the domain from the URL
         domain = urlparse(response.url).netloc        

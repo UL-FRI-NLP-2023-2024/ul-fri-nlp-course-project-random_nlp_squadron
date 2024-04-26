@@ -5,6 +5,6 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install scrapy
 
-cd webcrawler/webcrawler
+cd src/webcrawler/webcrawler
 
-scrapy crawl spider
+scrapy crawl $1
