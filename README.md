@@ -41,3 +41,8 @@ This project focuses on utilizing Large Language Models (LLMs) to process and ex
 - [Llama 2: Open foundation and fine-tuned chat models](https://arxiv.org/abs/2307.09288)
 - [BLOOM: A 176B-Parameter Open-Access Multilingual Language Model](https://arxiv.org/abs/2211.05100), [Model on Hugging Face](https://huggingface.co/bigscience/bloom)
 
+## How to run Scrapy
+It is recommended to use SLING to run the crawler as a lot of compute power is available. Once logged in to the login node, run the command below for the crawler to start working. After the job has ended, the output will be stored in xml files.
+```
+sbatch run.sh
+```

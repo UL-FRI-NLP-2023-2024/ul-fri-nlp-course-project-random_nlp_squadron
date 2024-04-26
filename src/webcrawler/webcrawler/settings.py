@@ -12,8 +12,9 @@ BOT_NAME = "webcrawler"
 SPIDER_MODULES = ["webcrawler.spiders"]
 NEWSPIDER_MODULE = "webcrawler.spiders"
 
-FEED_FORMAT = 'xml'
-FEED_URI = 'output.xml'
+# Specify export format
+FEED_FORMAT = "xml"
+FEED_URI = "../../../data/output.xml"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "webcrawler (+http://www.yourdomain.com)"
@@ -46,9 +47,9 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    "webcrawler.middlewares.WebcrawlerSpiderMiddleware": 543,
-#}
+# SPIDER_MIDDLEWARES = {
+#    "webcrawler.middlewares.WebcrawlerSpiderMiddleware": 500,
+# }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html

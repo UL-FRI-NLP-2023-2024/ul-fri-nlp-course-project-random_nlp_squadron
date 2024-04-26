@@ -31,11 +31,11 @@ class WebcrawlerSpiderMiddleware:
     def process_spider_output(self, response, result, spider):
         # Called with the results returned from the Spider, after
         # it has processed the response.
-
+        
         # Must return an iterable of Request, or item objects.
         for i in result:
             yield i
-
+        
     def process_spider_exception(self, response, exception, spider):
         # Called when a spider or process_spider_input() method
         # (from other spider middleware) raises an exception.
