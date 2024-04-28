@@ -28,7 +28,7 @@ This project focuses on utilizing Large Language Models (LLMs) to process and ex
 ### Milestones
 - [x] [Milestone 1](https://github.com/UL-FRI-NLP-2023-2024/ul-fri-nlp-course-project-random_nlp_squadron/milestone/1) 
 - [Milestone 2 - 3. 5.](https://github.com/UL-FRI-NLP-2023-2024/ul-fri-nlp-course-project-random_nlp_squadron/milestone/2) 
-- [Milestone 3](https://github.com/UL-FRI-NLP-2023-2024/ul-fri-nlp-course-project-random_nlp_squadron/milestone/3) 
+- [Milestone 3 - 24. 5.](https://github.com/UL-FRI-NLP-2023-2024/ul-fri-nlp-course-project-random_nlp_squadron/milestone/3) 
 
 ## Objectives
 - Understand the architecture and capabilities of LLMs.
