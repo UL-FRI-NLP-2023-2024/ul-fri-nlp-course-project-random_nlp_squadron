@@ -13,8 +13,9 @@ SPIDER_MODULES = ["webcrawler.spiders"]
 NEWSPIDER_MODULE = "webcrawler.spiders"
 
 # Specify export format
+# FEED_URI = "../../../data/output_%(name).xml"
+FEED_URI = "../../../data/output_%(name)s_%(time)s.xml"
 FEED_FORMAT = "xml"
-FEED_URI = "../../../data/output_%(name).xml"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "webcrawler (+http://www.yourdomain.com)"

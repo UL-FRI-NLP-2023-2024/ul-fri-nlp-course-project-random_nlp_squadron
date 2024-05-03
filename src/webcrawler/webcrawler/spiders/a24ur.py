@@ -2,17 +2,16 @@ import scrapy
 from datetime import datetime
 from urllib.parse import urlparse
 
-
-class SlotechSpider(scrapy.Spider):
-    name = 'slotech'
-    allowed_domains = ['slo-tech.com']
-    start_urls = ['http://slo-tech.com/']
+class A24urSpider(scrapy.Spider):
+    name = '24ur'
+    allowed_domains = ['24ur.com']
+    start_urls = ['http://24ur.com/']
     minimal_chars_allowed = 10
-    
+
     def parse(self, response):
-
-        posts = response.css('.post .content ::text').getall()
-
+        
+        posts = response.css('.article__body p ::text').getall()
+    
         # Extracting the domain from the URL
         domain = urlparse(response.url).netloc        
 
@@ -36,4 +35,6 @@ class SlotechSpider(scrapy.Spider):
             full_url = response.urljoin(link)
             if any(domain in full_url for domain in self.allowed_domains):
                 yield scrapy.Request(full_url, callback=self.parse)
+
+
 

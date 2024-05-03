@@ -8,10 +8,6 @@ class MedovernetSpider(scrapy.Spider):
     start_urls = ['http://med.over.net/']
     minimal_chars_allowed = 10
     
-    custom_settings = {
-        'FEED_URI': '../../../data/output_medovernet.xml'
-    }
-
     def parse(self, response):
         
         posts = response.css('.forum-post__content ::text').getall()
