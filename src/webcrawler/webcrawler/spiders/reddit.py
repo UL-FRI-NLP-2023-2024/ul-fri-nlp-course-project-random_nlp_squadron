@@ -2,16 +2,17 @@ import scrapy
 from datetime import datetime
 from urllib.parse import urlparse
 
-class MedovernetSpider(scrapy.Spider):
-    name = 'medovernet'
-    allowed_domains = ['med.over.net']
-    start_urls = ['http://med.over.net/']
+class RedditSpider(scrapy.Spider):
+    name = 'reddit'
+    allowed_domains = ['reddit.com']
+    start_urls = ['https://www.reddit.com/r/Slovenia/']
     minimal_chars_allowed = 10
+
     
     def parse(self, response):
-        
-        posts = response.css('.forum-post__content ::text').getall()
-    
+
+        posts = response.css('p ::text').getall()
+
         # Extracting the domain from the URL
         domain = urlparse(response.url).netloc        
 
@@ -35,5 +36,4 @@ class MedovernetSpider(scrapy.Spider):
             full_url = response.urljoin(link)
             if any(domain in full_url for domain in self.allowed_domains):
                 yield scrapy.Request(full_url, callback=self.parse)
-
 
