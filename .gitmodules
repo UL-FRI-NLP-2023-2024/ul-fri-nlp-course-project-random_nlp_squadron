@@ -1,0 +1,3 @@
+[submodule "src/monocleaner"]
+	path = src/monocleaner
+	url = git@github.com:bitextor/monocleaner.git
