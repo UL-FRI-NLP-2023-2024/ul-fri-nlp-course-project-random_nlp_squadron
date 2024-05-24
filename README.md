@@ -15,7 +15,6 @@ This project focuses on utilizing Large Language Models (LLMs) to process and ex
 ## Methodology
 ![Data processing pipeline](docs/third_submission/drawio.png)
 
-### Overview of the Pipeline
 
 ### 1. Data Collection
 - **Description**: We collect data from multiple online sources to create a diverse and comprehensive dataset.
