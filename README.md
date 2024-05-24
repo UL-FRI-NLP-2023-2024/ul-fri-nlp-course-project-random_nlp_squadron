@@ -1,6 +1,6 @@
 # Natural language processing course 2023/24: `Slovenian Instruction-based Corpus Generation`
 
-test commit
+**Final submission is under docs/third_submission/ folder.**
 
 ## Team: RANDOM NLP SQUADRON
 
