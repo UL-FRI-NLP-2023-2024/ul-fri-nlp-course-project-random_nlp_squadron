@@ -1,0 +1,29 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
+Nodelist:=  wn216
+Number of nodes:=  1
+Ntasks per node:=  1
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
+NODELIST=wn216
+MASTER_ADDR=wn216
+Starting python script
+Using python from /d/hpc/home/ac8694/env/bin/python
+Using torch from /d/hpc/home/ac8694/env/lib64/python3.11/site-packages/torch/__init__.py
+Using torch cuda from 12.1
+Using nccl from (2, 19, 3)
+CUDA_HOME=/cvmfs/sling.si/modules/el7/software/CUDA/12.1.1
+World size: 2
+{'world_size': 2, 'train_type': 'custom_qlora', 'llama_pro_path': None, 'batch_size': 8, 'context_length': 512, 'gradient_accumulation_steps': 1, 'num_epochs': 1, 'dataset': 'alpaca', 'dataset_samples': 512, 'sharding_strategy': 'full_shard', 'use_gradient_checkpointing': 1, 'reentrant_checkpointing': False, 'use_cpu_offload': 0, 'use_activation_cpu_offload': 1, 'low_memory': True, 'no_sync': False, 'precision': 'bf16', 'model_name': 'meta-llama/Llama-2-7b-hf', 'save_model': 1, 'output_dir': 'output', 'lora_rank': 64, 'lora_alpha': 16, 'lora_dropout': 0.1, 'lora_target_modules': 'all', 'verbose': 1, 'lr': 1e-05, 'apply_gradient_clipping': False, 'grad_norm': 0.3, 'wd': 0.1, 'profile_memory': False, 'optimizer': 'adamw', 'lr_scheduler': 'constant', 'loading_workers': -1, 'log_to': 'stdout', 'master_addr': 'wn216', 'master_port': '12340', 'seed': 42, 'project_name': 'fsdp_qlora', 'name': None, 'group': None, 'entity': None}
+Traceback (most recent call last):
+  File "/d/hpc/home/ac8694/fsdp_qlora/../fsdp_qlora/train.py", line 992, in <module>
+    @call_parse()
+     ^^^^^^^^^^^^
+  File "/d/hpc/home/ac8694/env/lib64/python3.11/site-packages/fastcore/script.py", line 125, in call_parse
+    return _f()
+           ^^^^
+  File "/d/hpc/home/ac8694/env/lib64/python3.11/site-packages/fastcore/script.py", line 119, in _f
+    return tfunc(**merge(args, args_from_prog(func, xtra)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/d/hpc/home/ac8694/fsdp_qlora/../fsdp_qlora/train.py", line 1055, in main
+    raise ValueError('Current device does not support bfloat16')
+ValueError: Current device does not support bfloat16
+srun: error: wn216: task 0: Exited with exit code 1
