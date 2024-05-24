@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/d/hpc/home/ac8694/fsdp_qlora/test_cuda/test_cuda.py", line 2, in <module>
-    import pycuda.driver as cuda
-ModuleNotFoundError: No module named 'pycuda'

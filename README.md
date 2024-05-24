@@ -13,13 +13,36 @@ test commit
 This project focuses on utilizing Large Language Models (LLMs) to process and execute complex Slovene instructions. The objective is to collect and refine a conversational dataset to improve a multilingual LLM's Slovene performance, responding to the growing use of AI assistants in diverse fields.
 
 ## Methodology
+![Data processing pipeline](docs/third_submission/drawio.png)
 
-1. **LLM Review**: Select a suitable LLM for the project, considering available infrastructure such as SLING, VEGA, or Nvidia A100 GPUs.
-2. **Data Preparation**:
-   - Analyze dataset construction techniques for instruction-based LLMs.
-   - Develop a data collection plan, identifying potential sources (e.g., forums, websites).
-   - Implement tools for data collection and organization, ensuring the dataset is conducive to model fine-tuning.
-3. **Model Adaptation** (Optional): Utilize the prepared dataset to fine-tune an existing LLM, enhancing its conversational capabilities in Slovene.
+
+### 1. Data Collection
+- **Description**: We collect data from multiple online sources to create a diverse and comprehensive dataset.
+- **Tool**: Scrapy
+- **Process**: Using Scrapy, we scrape various websites such as news portals, forums, and other digital media that are rich in Slovene text.
+
+### 2. Preprocessing
+- **Description**: The collected data is preprocessed to ensure quality and relevance.
+- **Tasks**:
+  - Filtering out short and irrelevant sequences.
+  - Deduplication to remove redundant content.
+  - Annotation of text sequences based on length and language fluency.
+  - Clustering to group similar content for better analysis and processing.
+- **Tool**: Monocleaner
+- **Process**: We use Monocleaner to detect disfluent sentences and assign fluency scores. Texts are also annotated with quality scores based on their length. Clustering techniques are applied to organize the data into meaningful groups.
+  
+### 3. Instruction Dataset
+- **Description**: We generate a dataset of instruction-following examples in Slovene.
+- **Tasks**: Creating high-quality instructions that are contextually relevant to the provided texts.
+- **Tool**: LLaMA (Large Language Model)
+- **Process**: We use the LLaMA model to generate context-appropriate questions and instructions, ensuring that the generated instructions are relevant to the content.
+
+### 4. Model Fine-tuning
+- **Description**: The LLaMA model is fine-tuned using the generated instruction-following dataset.
+- **Techniques**:
+  - **Low-Rank Adaptation (LoRA)**: Efficiently adapts large pre-trained language models by modifying a select subset of parameters through rank-decomposition matrices.
+  - **Fully Sharded Data Parallel (FSDP)**: Optimizes training by distributing the model's parameters across multiple GPUs, reducing memory demands and improving scalability.
+- **Process**: The fine-tuning process enhances the model's ability to understand and execute tasks in Slovene, making it more effective for local applications.
 
 ## Repository Structure
 
