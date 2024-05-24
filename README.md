@@ -13,7 +13,7 @@ test commit
 This project focuses on utilizing Large Language Models (LLMs) to process and execute complex Slovene instructions. The objective is to collect and refine a conversational dataset to improve a multilingual LLM's Slovene performance, responding to the growing use of AI assistants in diverse fields.
 
 ## Methodology
-![Data processing pipeline](drawio.png)
+![Data processing pipeline](docs/third_submission/drawio.png)
 
 ### Overview of the Pipeline
 
